@@ -1,0 +1,6 @@
+htl_immobilier_homepage:
+    path:     /
+    defaults: { _controller: HTLImmobilierBundle:Default:index }
+accueil:
+    path:     /accueil
+    defaults: { _controller: HTLImmobilierBundle:Reservation:accueil }
