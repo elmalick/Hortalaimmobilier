@@ -45,7 +45,7 @@ class Proprietaire
     /**
      * @var int
      *
-     * @ORM\Column(name="tel", type="integer", unique=true)
+     * @ORM\Column(name="tel", type="integer", unique=false)
      */
     private $tel;
 
@@ -59,9 +59,12 @@ class Proprietaire
     /**
      * @var string
      *
-     * @ORM\Column(name="codeBanque", type="string", length=30, unique=true)
+     * @ORM\Column(name="codeBanque", type="string", length=30, unique=false)
      */
     private $codeBanque;
+
+
+  // …
 
 
     /**
@@ -218,4 +221,3 @@ class Proprietaire
         return $this->codeBanque;
     }
 }
-
