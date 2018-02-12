@@ -24,9 +24,10 @@ class Bien
     /**
      * @var string
      *
-     * @ORM\Column(name="nombien", type="string", length=50)
+     * @ORM\Column(name="nombien", type="string", length=30)
      */
     private $nombien;
+    
 
     /**
      * @var bool
@@ -38,7 +39,7 @@ class Bien
     /**
      * @var string
      *
-     * @ORM\Column(name="description", type="string", length=50)
+     * @ORM\Column(name="description", type="text")
      */
     private $description;
 
@@ -49,39 +50,27 @@ class Bien
      */
     private $prixlocation;
 
-
+    
     /**
-
    * @ORM\ManyToOne(targetEntity="HTL\ImmobilierBundle\Entity\Bien")
-
    * @ORM\JoinColumn(nullable=false)
-
    */
-
-  private $parent;
-
-
-  /**
-
+    private $idparentbien;
+     /**
    * @ORM\ManyToOne(targetEntity="HTL\ImmobilierBundle\Entity\Bien")
-
    * @ORM\JoinColumn(nullable=false)
-
    */
-
-  private $localite;
-
-
-/**
-
-   * @ORM\ManyToOne(targetEntity="HTL\ImmobilierBundle\Entity\Typebien")
-
+    private $idlocalite;
+    /**
+   * @ORM\ManyToOne(targetEntity="HTL\ImmobilierBundle\Entity\Bien")
    * @ORM\JoinColumn(nullable=false)
-
    */
-
-  private $type;
-
+    private $idtypebien;
+      /**
+   * @ORM\ManyToOne(targetEntity="HTL\ImmobilierBundle\Entity\Bien")
+   * @ORM\JoinColumn(nullable=false)
+   */
+    private $images;
 
 
     /**
@@ -166,31 +155,30 @@ class Bien
         return $this->description;
     }
 
-   
-
- 
-
     /**
-     * Set prixlocation
+     * Set prixLocation
      *
-     * @param integer $prixlocation
+     * @param integer $prixLocation
      *
      * @return Bien
      */
-    public function setPrixlocation($prixlocation)
+    public function setPrixLocation($prixLocation)
     {
-        $this->prixlocation = $prixlocation;
+        $this->prixLocation = $prixLocation;
 
         return $this;
     }
 
     /**
-     * Get prixlocation
+     * Get prixLocation
      *
      * @return int
      */
-    public function getPrixlocation()
+    public function getPrixLocation()
     {
-        return $this->prixlocation;
+        return $this->prixLocation;
     }
+
+   
 }
+
